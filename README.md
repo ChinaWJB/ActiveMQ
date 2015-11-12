@@ -4,6 +4,6 @@
   <h3>test send and receive</h3>
   </header>
   <body>  
-    <font color="red" size="3" face="verdana">只有5.7版本是可以运行的</font></br></br>
+    <h4>只有5.7版本是可以运行的</h4></br></br>
   </body>
 </html>
