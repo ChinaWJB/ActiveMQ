@@ -15,12 +15,12 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 public class Producer {
 	public static void main(String[] args) {		
-		String user = ActiveMQConnection.DEFAULT_USER;
-		String password = ActiveMQConnection.DEFAULT_PASSWORD;
-		String url = ActiveMQConnection.DEFAULT_BROKER_URL;
+//		String user = ActiveMQConnection.DEFAULT_USER;
+//		String password = ActiveMQConnection.DEFAULT_PASSWORD;
+//		String url = ActiveMQConnection.DEFAULT_BROKER_URL;
 		String subject = "TOOL.DEFAULT";
 		//通过username,password,url创建连接工厂接口
-		ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(user, password, url);
+		ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://127.0.0.1:61616");
 		try {
 			//通过连接工厂创建一个新的连接接口
 			Connection connection = connectionFactory.createConnection();
