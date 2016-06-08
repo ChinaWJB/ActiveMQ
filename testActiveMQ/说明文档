@@ -18,7 +18,7 @@ Destination实际上就是两种类型的对象：Queue、Topic，可以通过JN
 表示一个单线程的上下文，用于发送和接收消息。由于会话是单线程的，所以消息是连续的，就是说消息是按照发送的顺序一个一个接收的。会话的好处是它支持事务。如果用户选择了事务支持，会话上下文将保存一组消息，直到事务被提交才发送这些消息。在提交事务之前，用户可以使用回滚操作取消这些消息。一个会话允许用户创建消息，生产者来发送消息，消费者来接收消息。
 Session是我们操作消息的接口。可以通过session创建生产者、消费者、消息等。Session提供了事务的功能。当我们需要使用 session发送/接收多个消息时，可以将这些发送/接收动作放到一个事务中。同样，也分QueueSession和TopicSession。
 
-##MessageConsumer 接口（消息消费者</h3>
+##MessageConsumer 接口（消息消费者）
 由会话创建的对象，用于接收发送到目标的消息。消费者可以同步地（阻塞模式），或（非阻塞）接收队列和主题类型的消息。
 消息消费者由Session创建，用于接收被发送到Destination的消息。两种类型：QueueReceiver和 TopicSubscriber。可分别通过session的createReceiver(Queue)或 createSubscriber(Topic)来创建。当然，也可以session的creatDurableSubscriber方法来创建持久化的 订阅者。
 
